@@ -1,0 +1,7 @@
+{
+  "incremental": true,
+  "includes": ["**/*.dockerfile"],
+  "plugins": [
+    "https://plugins.dprint.dev/dockerfile-0.1.1.wasm"
+  ]
+}

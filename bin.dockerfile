@@ -1,6 +1,5 @@
 ARG DENO_VERSION=1.14.3
 
-
 FROM buildpack-deps:20.04-curl AS download
 
 RUN export DEBIAN_FRONTEND=noninteractive \
@@ -14,7 +13,6 @@ RUN curl -fsSL https://github.com/denoland/deno/releases/download/v${DENO_VERSIO
   && unzip deno.zip \
   && rm deno.zip \
   && chmod 755 deno
-
 
 FROM scratch
 

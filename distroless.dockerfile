@@ -1,9 +1,7 @@
 ARG DENO_VERSION=1.14.3
 ARG BIN_IMAGE=denoland/deno:bin-${DENO_VERSION}
 
-
 FROM ${BIN_IMAGE} AS bin
-
 
 FROM buildpack-deps:20.04-curl AS tini
 
@@ -12,12 +10,10 @@ RUN curl -fsSL https://github.com/krallin/tini/releases/download/v${TINI_VERSION
     --output /tini \
   && chmod +x /tini
 
-
 FROM gcr.io/distroless/cc
 
-
-ENV DENO_DIR /deno-dir/
-ENV DENO_INSTALL_ROOT /usr/local
+ENV DENO_DIR=/deno-dir/
+ENV DENO_INSTALL_ROOT=/usr/local
 
 ARG DENO_VERSION
 ENV DENO_VERSION=${DENO_VERSION}
